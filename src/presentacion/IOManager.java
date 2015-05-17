@@ -11,13 +11,11 @@ public class IOManager {
     public static String leerLinea(String mensajeInicio){
         IOManager.print(mensajeInicio);
         Scanner scan = new Scanner(System.in);
-        if (scan.hasNextLine()) {
-            scan.close();
-            return scan.nextLine();
-        } else {
-            scan.close();
-            return "";
-        }
+        final String line;
+        if (scan.hasNextLine()) line = scan.nextLine();
+        else line = "";
+        //scan.close();
+        return line;
     }
 
 }
